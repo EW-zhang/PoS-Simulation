@@ -1,0 +1,12 @@
+export FLASK_APP=node_server.py
+set FLASK_APP=node_server.py
+flask run --port 8000
+gunicorn -b 127.0.0.1:8000 node_server:app
+curl http://127.0.0.1:8000/chain
+curl http://127.0.0.1:8000/pending_tx
+curl http://127.0.0.1:8000/mine
+pip install Flask~=1.1
+python set_peers.py
+python send_tx.py
+python mine3.py
+python propose_block.py
